@@ -4,17 +4,17 @@
 A biomedical calculator for the body mass index (BMI) and other parameters.
 
 For method bmi(mass, height) we will have these different tests:
-- mass with a negative value and height with a negative value: throw EXCEPTION
-- mass with a negative value and height equal to zero: throw EXCEPTION
-- mass with a negative value and height equal to 1.81: throw EXCEPTION
-- mass equal to zero height with a negative value: throw EXCEPTION
-- mass equal to 62 and height with a negative value: throw EXCEPTION
+- mass with a negative value and height with a negative value: "EXCEPTION: Invalid arguments"
+- mass with a negative value and height equal to zero: "EXCEPTION: Invalid arguments"
+- mass with a negative value and height equal to 1.81: "EXCEPTION: Invalid arguments"
+- mass equal to zero height with a negative value: "EXCEPTION: Invalid arguments"
+- mass equal to 62 and height with a negative value: "EXCEPTION: Invalid arguments"
 - mass equal to 62 and height equal to 1.81: we expect 18.92
 - mass equal to 75 and height equal to 1.90: we expect 20.73
 
 For method category(bmi) we will have these different tests:
-- bmi equal to -2: throw EXCEPTION
-- bmi equal to zero: throw EXCEPTION
+- bmi equal to -2: "EXCEPTION: Invalid arguments"
+- bmi equal to zero: "EXCEPTION: Invalid arguments"
 - bmi equal to 10: we expect "UNDERWEIGHT"
 - bmi equal to 18.4: we expect "UNDERWEIGHT"
 - bmi equal to 18.5: we expect "NORMAL"
@@ -27,13 +27,13 @@ For method category(bmi) we will have these different tests:
 - bmi equal to 35: we expect "OBESE"
 
 For method abdominalObesity(waistCircunference, gender) we will have these different tests:
-- waistCircunference with a negative value and gender equal to 'M': throw EXCEPTION
-- waistCircunference equal to zero and gender equal to 'F': throw EXCEPTION
-- waistCircunference equal to 56 and gender equal to 'P': throw EXCEPTION
-- waistCircunference equal to 2 and gender equal to 'Q': throw EXCEPTION
-- waistCircunference equal to 43 and gender equal to 'K': throw EXCEPTION
-- waistCircunference with a negative value and gender equal to 'F': EXCEPTION
-- waistCircunference equal to zero and gender equal to 'F': EXCEPTION
+- waistCircunference with a negative value and gender equal to 'M': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to zero and gender equal to 'F': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to 56 and gender equal to 'P': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to 2 and gender equal to 'Q': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to 43 and gender equal to 'K': "EXCEPTION: Invalid arguments"
+- waistCircunference with a negative value and gender equal to 'F': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to zero and gender equal to 'F': "EXCEPTION: Invalid arguments"
 - waistCircunference equal to 10 and gender equal to 'M': we expect FALSE
 - waistCircunference equal to 70 and gender equal to 'M': we expect FALSE
 - waistCircunference equal to 90 and gender equal to 'M': we expect FALSE
