@@ -49,13 +49,14 @@ public class BMICalcTest {
 	@Test
 	@DisplayName("BMI test with accurate values")
 	public void bmitestCorrect() {
-		assertEquals(18.92, calc.bmi(62, 1.81));
+		assertEquals(18.924941241109856, calc.bmi(62, 1.81));
 	}
 	
 	@Test
 	@DisplayName("BMI test with accurate values")
 	public void bmitestCorrect2() {
-		assertEquals(20.73, calc.bmi(75, 1.90));
+		assertEquals(20.775623268698062, calc.bmi(75, 1.90));
+		
 	}
 	
 	@Test
