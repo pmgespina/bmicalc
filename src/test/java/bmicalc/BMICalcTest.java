@@ -130,4 +130,113 @@ public class BMICalcTest {
 		assertEquals("OBESE", calc.category(35));
 	}
 	
+	@Test
+	@DisplayName("Abdominal obesity negative circunference male")
+	public void abdominalObesity1() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(-2, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity zero circunference female")
+	public void abdominalObesity2() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(0, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity invalid gender")
+	public void abdominalObesity3() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(56, 'P'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity invalid gender")
+	public void abdominalObesity4() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(2, 'Q'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity invalid gender")
+	public void abdominalObesity5() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(43, 'K'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity negative circunference female")
+	public void abdominalObesity6() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(-4, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity zero circunference male")
+	public void abdominalObesity7() {
+		assertThrows(RuntimeException.class, () -> calc.abdominalObesity(0, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 10 male")
+	public void abdominalObesity8() {
+		assertEquals(false, calc.abdominalObesity(10, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 70 male")
+	public void abdominalObesity9() {
+		assertEquals(false, calc.abdominalObesity(70, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 90 male")
+	public void abdominalObesity10() {
+		assertEquals(false, calc.abdominalObesity(90, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 91 male")
+	public void abdominalObesity11() {
+		assertEquals(true, calc.abdominalObesity(91, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 100 male")
+	public void abdominalObesity12() {
+		assertEquals(true, calc.abdominalObesity(100, 'M'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 15 female")
+	public void abdominalObesity13() {
+		assertEquals(false, calc.abdominalObesity(15, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 27 female")
+	public void abdominalObesity14() {
+		assertEquals(false, calc.abdominalObesity(27, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 79 female")
+	public void abdominalObesity15() {
+		assertEquals(false, calc.abdominalObesity(79, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 80 female")
+	public void abdominalObesity16() {
+		assertEquals(false, calc.abdominalObesity(80, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 81 female")
+	public void abdominalObesity17() {
+		assertEquals(true, calc.abdominalObesity(81, 'F'));
+	}
+	
+	@Test
+	@DisplayName("Abdominal obesity circunference = 90 female")
+	public void abdominalObesity18() {
+		assertEquals(true, calc.abdominalObesity(90, 'F'));
+	}
+	
+	
 }
