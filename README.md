@@ -33,7 +33,7 @@ For method abdominalObesity(waistCircunference, gender) we will have these diffe
 - waistCircunference equal to 2 and gender equal to 'Q': "EXCEPTION: Invalid arguments"
 - waistCircunference equal to 43 and gender equal to 'K': "EXCEPTION: Invalid arguments"
 - waistCircunference with a negative value and gender equal to 'F': "EXCEPTION: Invalid arguments"
-- waistCircunference equal to zero and gender equal to 'F': "EXCEPTION: Invalid arguments"
+- waistCircunference equal to zero and gender equal to 'M': "EXCEPTION: Invalid arguments"
 - waistCircunference equal to 10 and gender equal to 'M': we expect FALSE
 - waistCircunference equal to 70 and gender equal to 'M': we expect FALSE
 - waistCircunference equal to 90 and gender equal to 'M': we expect FALSE
