@@ -25,7 +25,7 @@ Feature: Calculate Body Mass Index
   @tag1
   Scenario Outline: height and mass are correct
   	Given the Body Mass Index calculator
-  	When the user with mass <m> kg and height <h> m clicks on the Calculate BMI button
+  	When the user with correct mass <m> kg and correct height <h> m clicks on the Calculate BMI button
   	Then the calculator returns a value <v>
   	
   	Examples:
@@ -37,7 +37,7 @@ Feature: Calculate Body Mass Index
   @tag2
   Scenario Outline: height is incorrect
     Given the Body Mass Index calculator
-    When the user with mass <m> kg and height <h> m clicks on the Calculate BMI button
+    When the user with correct mass <m> kg and incorrect height <h> m clicks on the Calculate BMI button
     Then the calculator throws an exception
 
     Examples: 
@@ -50,7 +50,7 @@ Feature: Calculate Body Mass Index
    @tag3
    Scenario Outline: mass is incorrect
    	Given the Body Mass Index calculator
-  	When the user with mass <m> kg and height <h> m clicks on the Calculate BMI button
+  	When the user with incorrect mass <m> kg and incorrect height <h> m clicks on the Calculate BMI button
   	Then the calculator throws an exception
    
    	Examples: 
