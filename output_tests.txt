@@ -1,0 +1,244 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< uma.gis.isa:bmicalc >-------------------------
+[INFO] Building BMICalc 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ bmicalc ---
+[INFO] skip non existing resourceDirectory /Users/PabloMoreno/Desktop/SOFTWARE_AVANZADA/practicas/repo1/bmicalc/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ bmicalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ bmicalc ---
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ bmicalc ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.0.0-M7:test (default-test) @ bmicalc ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running bmicalc.bdd.RunCucumberTest
+
+@tag @tag1
+Scenario Outline: height and mass are correct                                                          # bmicalc/bmicalc_BMI.feature:33
+  Given the Body Mass Index calculator                                                                 # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 62.0 kg and correct height 1.81 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_correct_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator returns a value 18.924941241109856                                               # bmicalc.bdd.StepDefinitions.the_calculator_returns_a_value(java.lang.Double)
+
+@tag @tag1
+Scenario Outline: height and mass are correct                                                          # bmicalc/bmicalc_BMI.feature:34
+  Given the Body Mass Index calculator                                                                 # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 75.0 kg and correct height 1.90 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_correct_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator returns a value 20.775623268698062                                               # bmicalc.bdd.StepDefinitions.the_calculator_returns_a_value(java.lang.Double)
+
+@tag @tag1
+Scenario Outline: height and mass are correct                                                          # bmicalc/bmicalc_BMI.feature:35
+  Given the Body Mass Index calculator                                                                 # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 75.0 kg and correct height 1.90 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_correct_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator returns a value 20.775623268698062                                               # bmicalc.bdd.StepDefinitions.the_calculator_returns_a_value(java.lang.Double)
+
+@tag @tag2
+Scenario Outline: height is incorrect                                                                     # bmicalc/bmicalc_BMI.feature:45
+  Given the Body Mass Index calculator                                                                    # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 61.0 kg and incorrect height -1.91 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                 # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: height is incorrect                                                                     # bmicalc/bmicalc_BMI.feature:46
+  Given the Body Mass Index calculator                                                                    # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 50.0 kg and incorrect height -1.20 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                 # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: height is incorrect                                                                     # bmicalc/bmicalc_BMI.feature:47
+  Given the Body Mass Index calculator                                                                    # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with correct mass 80.0 kg and incorrect height -1.90 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_correct_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                 # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: mass is incorrect                                                                         # bmicalc/bmicalc_BMI.feature:58
+  Given the Body Mass Index calculator                                                                      # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with incorrect mass -82.0 kg and incorrect height 1.81 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_incorrect_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                   # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: mass is incorrect                                                                         # bmicalc/bmicalc_BMI.feature:59
+  Given the Body Mass Index calculator                                                                      # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with incorrect mass -35.0 kg and incorrect height 1.10 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_incorrect_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                   # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: mass is incorrect                                                                         # bmicalc/bmicalc_BMI.feature:60
+  Given the Body Mass Index calculator                                                                      # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with incorrect mass -75.0 kg and incorrect height 1.90 m clicks on the Calculate BMI button # bmicalc.bdd.StepDefinitions.the_user_with_incorrect_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(java.lang.Double,java.lang.Double)
+  Then the calculator throws an exception                                                                   # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:33
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 10.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "UNDERWEIGHT"                         # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:34
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 18.4 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "UNDERWEIGHT"                         # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:35
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 18.5 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "NORMAL"                              # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:36
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 21.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "NORMAL"                              # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:37
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 24.9 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "NORMAL"                              # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:38
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 25.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "OVERWEIGHT"                          # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:39
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 29.9 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "OVERWEIGHT"                          # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:40
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 30.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "OBESE"                               # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag1
+Scenario Outline: the value of BMI is correct                       # bmicalc/bmicalc_categorize.feature:41
+  Given the Body Mass Index calculator                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with a correct value 32.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_a_correct_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator returns "OBESE"                               # bmicalc.bdd.StepDefinitions.the_calculator_returns(java.lang.String)
+
+@tag @tag2
+Scenario Outline: the value of BMI is incorrect                        # bmicalc/bmicalc_categorize.feature:51
+  Given the Body Mass Index calculator                                 # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with an incorrect value -3.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_an_incorrect_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator throws an exception                              # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: the value of BMI is incorrect                        # bmicalc/bmicalc_categorize.feature:52
+  Given the Body Mass Index calculator                                 # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with an incorrect value -5.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_an_incorrect_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator throws an exception                              # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: the value of BMI is incorrect                       # bmicalc/bmicalc_categorize.feature:53
+  Given the Body Mass Index calculator                                # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with an incorrect value 0.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_an_incorrect_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator throws an exception                             # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: the value of BMI is incorrect                          # bmicalc/bmicalc_categorize.feature:54
+  Given the Body Mass Index calculator                                   # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When the user with an incorrect value -100.0 as BMI categorize himself # bmicalc.bdd.StepDefinitions.the_user_with_an_incorrect_value_as_bmi_categorize_himself(java.lang.Double)
+  Then the calculator throws an exception                                # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag1
+Scenario Outline: gender and waist circumference are OK                 # bmicalc/bmicalc_obesity.feature:33
+  Given the Body Mass Index calculator                                  # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'F' gender and 48.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator returns boolean "false"                           # bmicalc.bdd.StepDefinitions.the_calculator_returns_boolean(java.lang.String)
+
+@tag @tag1
+Scenario Outline: gender and waist circumference are OK                  # bmicalc/bmicalc_obesity.feature:34
+  Given the Body Mass Index calculator                                   # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'F' gender and 120.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator returns boolean "true"                             # bmicalc.bdd.StepDefinitions.the_calculator_returns_boolean(java.lang.String)
+
+@tag @tag1
+Scenario Outline: gender and waist circumference are OK                  # bmicalc/bmicalc_obesity.feature:35
+  Given the Body Mass Index calculator                                   # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'M' gender and 100.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator returns boolean "true"                             # bmicalc.bdd.StepDefinitions.the_calculator_returns_boolean(java.lang.String)
+
+@tag @tag1
+Scenario Outline: gender and waist circumference are OK                 # bmicalc/bmicalc_obesity.feature:36
+  Given the Body Mass Index calculator                                  # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'M' gender and 75.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator returns boolean "false"                           # bmicalc.bdd.StepDefinitions.the_calculator_returns_boolean(java.lang.String)
+
+@tag @tag2
+Scenario Outline: gender is incorrect and waist circumference OK               # bmicalc/bmicalc_obesity.feature:46
+  Given the Body Mass Index calculator                                         # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces incorrect 'G' gender and 48.0 as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_incorrect_gender_and_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                      # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: gender is incorrect and waist circumference OK                # bmicalc/bmicalc_obesity.feature:47
+  Given the Body Mass Index calculator                                          # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces incorrect 'T' gender and 120.0 as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_incorrect_gender_and_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                       # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: gender is incorrect and waist circumference OK                # bmicalc/bmicalc_obesity.feature:48
+  Given the Body Mass Index calculator                                          # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces incorrect 'Z' gender and 100.0 as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_incorrect_gender_and_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                       # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag2
+Scenario Outline: gender is incorrect and waist circumference OK               # bmicalc/bmicalc_obesity.feature:49
+  Given the Body Mass Index calculator                                         # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces incorrect 'P' gender and 75.0 as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_incorrect_gender_and_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                      # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: gender is OK and waist circumference is incorrect                # bmicalc/bmicalc_obesity.feature:59
+  Given the Body Mass Index calculator                                             # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'M' gender and incorrect -98.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_incorrect_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                          # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: gender is OK and waist circumference is incorrect                 # bmicalc/bmicalc_obesity.feature:60
+  Given the Body Mass Index calculator                                              # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'F' gender and incorrect -113.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_incorrect_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                           # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: gender is OK and waist circumference is incorrect                # bmicalc/bmicalc_obesity.feature:61
+  Given the Body Mass Index calculator                                             # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'F' gender and incorrect -70.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_incorrect_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                          # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+
+@tag @tag3
+Scenario Outline: gender is OK and waist circumference is incorrect                # bmicalc/bmicalc_obesity.feature:62
+  Given the Body Mass Index calculator                                             # bmicalc.bdd.StepDefinitions.the_body_mass_index_calculator()
+  When an user introduces 'M' gender and incorrect -95.0 cm as waist circumference # bmicalc.bdd.StepDefinitions.an_user_introduces_gender_and_incorrect_cm_as_waist_circumference(java.lang.String,java.lang.Double)
+  Then the calculator throws an exception                                          # bmicalc.bdd.StepDefinitions.the_calculator_throws_an_exception()
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.865 s - in bmicalc.bdd.RunCucumberTest
+[INFO] Running bmicalc.BMICalcTest
+[INFO] Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 s - in bmicalc.BMICalcTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 71, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.259 s
+[INFO] Finished at: 2023-03-21T11:27:21+01:00
+[INFO] ------------------------------------------------------------------------
