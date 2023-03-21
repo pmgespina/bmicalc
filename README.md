@@ -71,3 +71,129 @@ For method abdominalObesity(waistCircunference, gender) we will have these diffe
 - Alternative scenario:
     2a. The mass value introduced by the user is invalid
     2b. The heigth value introduced by the user is invalid
+
+## Specification of user stories and scenarios 
+
+· User Storie 1: calculate Body Mass Index
+As a user of the Body Mass Index calculator
+I want to calculate my Body Mass Index
+So that I can realize if I have overweight
+
+- Scenario 1: 
+Given the Body Mass Index calculator
+When the user with 62 kg and 1,81 m clicks on the "Calculate BMI" button
+Then the calculator returns 18.92
+
+- Scenario 2:
+Given the Body Mass Index calculator
+When the user with -2 kg and 1,31 m clicks on the "Calculate BMI" button
+Then the calculator returns an error
+
+- Scenario 3:
+Given the Body Mass Index calculator
+When the user with 52 kg and -0,61 m clicks on the "Calculate BMI" button
+Then the calculator returns an error
+
+- Scenario 4:
+Given the Body Mass Index calculator
+When the user with -6 kg and -1,1 m clicks on the "Calculate BMI" button
+Then the calculator returns an error
+
+
+
+· User Storie 2: categorize a person depending on its Body Mass Index
+As a user of the Body Mass Index calculator
+I want to categorize myself according to my BMI result
+So that I know if I have to change to a healthy lifestyle
+
+- Scenario 1: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 10 wants to categorize himself
+Then the calculator returns "UNDERWEIGHT"
+
+- Scenario 2: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 18.4 wants to categorize himself
+Then the calculator returns "UNDERWEIGHT"
+
+- Scenario 3: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 18.5 wants to categorize himself
+Then the calculator returns "NORMAL"
+
+- Scenario 4: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 21 wants to categorize himself
+Then the calculator returns "NORMAL"
+
+- Scenario 5: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 24.9 wants to categorize himself
+Then the calculator returns "NORMAL"
+
+- Scenario 6: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 25 wants to categorize himself
+Then the calculator returns "OVERWEIGHT"
+
+- Scenario 7: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 29.9 wants to categorize himself
+Then the calculator returns "OVERWEIGHT"
+
+- Scenario 8: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 30 wants to categorize himself
+Then the calculator returns "OBESE"
+
+- Scenario 9: 
+Given the Body Mass Index calculator
+When the user with BMI equal to 32 wants to categorize himself
+Then the calculator returns "OBESE"
+
+- Scenario 10: 
+Given the Body Mass Index calculator
+When the user with BMI equal to -3 wants to categorize himself
+Then the calculator returns an error
+
+
+
+· User Storie 3:
+As a user of the Body Mass Index calculator
+I want to determine if I have abdominal obesity
+So that I know if I am obese or not
+
+- Scenario 1:
+Given the Body Mass Index calculator
+When a woman with 67 cm as waist circumference wants to determine if she has abdominal obesity
+Then the calculator returns a boolean telling that she does not have abdominal obesity
+
+- Scenario 2: 
+Given the Body Mass Index calculator
+When a woman with 81 cm as waist circumference wants to determine if she has abdominal obesity
+Then the calculator returns a boolean telling that she has abdominal obesity
+
+- Scenario 3: 
+Given the Body Mass Index calculator
+When a woman with -9 cm as waist circumference wants to determine if she has abdominal obesity
+Then the calculator returns an error
+
+- Scenario 4:
+Given the Body Mass Index calculator
+When a user whose gender character is 'P' and whose waist circumference is 9 wants to determine if he/she has abdominal obesity
+Then the calculator returns an error
+
+- Scenario 5: 
+Given the Body Mass Index calculator
+When a man with -9 cm as waist circumference wants to determine if he has abdominal obesity
+Then the calculator returns an error
+
+- Scenario 6: 
+Given the Body Mass Index calculator
+When a man with 80 cm as waist circumference wants to determine if he has abdominal obesity
+Then the calculator returns a boolean telling that he does not have abdominal obesity
+
+- Scenario 7: 
+Given the Body Mass Index calculator
+When a man with 91 cm as waist circumference wants to determine if he has abdominal obesity
+Then the calculator returns a boolean telling that he has abdominal obesity
