@@ -200,6 +200,6 @@ Then the calculator returns a boolean telling that he has abdominal obesity
 
 ## GUI
 
-![Mockup of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/mockup.pdf)
+![Mockup of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/mockup.png)
 
-![Screenshot of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/screenshot_GUI.pdf)
+![Screenshot of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/screenshot_GUI.png)
