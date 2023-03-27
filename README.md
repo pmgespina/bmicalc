@@ -197,3 +197,9 @@ Then the calculator returns a boolean telling that he does not have abdominal ob
 Given the Body Mass Index calculator
 When a man with 91 cm as waist circumference wants to determine if he has abdominal obesity
 Then the calculator returns a boolean telling that he has abdominal obesity
+
+## GUI
+
+![Mockup of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/mockup.pdf)
+
+![Screenshot of the interface](https://github.com/pmgespina/bmicalc/blob/main/doc/screenshot_GUI.pdf)
