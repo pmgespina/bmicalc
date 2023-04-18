@@ -1,6 +1,10 @@
 package bmicalc;
 
 public class BMICalcImpl implements BMICalc {
+	
+	private static BMICalcImpl instance;
+	
+	private BMICalcImpl() {}
 
 	public double bmi(double mass, double height) {
 		if (mass <= 0 || height <= 0) {
@@ -36,6 +40,13 @@ public class BMICalcImpl implements BMICalc {
 			res = true;
 		}
 		return res;
+	}
+	
+	public static BMICalcImpl getInstance() {
+		if (BMICalcImpl.instance == null) {
+			BMICalcImpl.instance = new BMICalcImpl();
+		}
+		return BMICalcImpl.instance;
 	}
 
 }
