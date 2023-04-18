@@ -13,7 +13,7 @@ public class BMICalcTest {
 
 	@BeforeEach
 	public void inicializar() {
-		calc = new BMICalcImpl();
+		calc = BMICalcImpl.getInstance();
 	}
 
 	@Test

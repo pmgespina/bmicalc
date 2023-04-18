@@ -32,7 +32,7 @@ public class StepDefinitions {
 	
 	@Given("the Body Mass Index calculator")
 	public void the_body_mass_index_calculator() {
-	    calculadora = new BMICalcImpl();
+	    calculadora = BMICalcImpl.getInstance();
 	}
 
 	@When("the user with correct mass {double} kg and correct height {double} m clicks on the Calculate BMI button")
