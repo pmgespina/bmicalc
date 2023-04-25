@@ -6,6 +6,10 @@ import java.util.Map;
 public class Adapter implements IMCHospital {
 	
 	private BMICalcImpl adapter;
+	
+	public Adapter() {
+		adapter = BMICalcImpl.getInstance();
+	}
 
 	@Override
 	public Map<Double, String> imc(double altura, double peso) {

@@ -10,6 +10,10 @@ public class Proxy implements IMCStats, IMCHospital {
 	private static double pesos;
 	private static double imcs;
 	private static int cnt;
+	
+	public Proxy() {
+		calculator = new Adapter();
+	}
 
 	@Override
 	public Map<Double, String> imc(double altura, double peso) {
@@ -17,10 +21,7 @@ public class Proxy implements IMCStats, IMCHospital {
 		pesos += peso;
 		Map<Double, String> res = calculator.imc(altura, peso);
 		Iterator<Double> it = res.keySet().iterator();
-		if(it.hasNext()) {
-			Double key = it.next();
-			imcs += key;
-		}
+		imcs += it.next();
 		cnt++;
 		return res;
 	}
