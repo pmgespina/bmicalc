@@ -1,4 +1,3 @@
-
 package bmicalc;
 
 import java.util.Scanner;
