@@ -1,38 +1,40 @@
 package bmicalc;
 
-public class BMICalcImpl implements BMICalc {
+public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
+	
+	private String exception = "EXCEPTION: Invalid arguments";
 
-	public double bmi(double mass, double height) {
+	public double calculateBodyMassIndex(double mass, double height) {
 		if (mass <= 0 || height <= 0) {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
+			throw new RuntimeException(exception);
 		} else {
 			return mass / Math.pow(height, 2);
 		}
 	}
 
-	public String category(double bmi) {
-		String res = "";
+	public ObesityCategory getObesityCategory(double bmi) {
+		ObesityCategory res;
 		if (bmi < 18.5 && bmi > 0) {
-			res = "UNDERWEIGHT";
+			res = ObesityCategory.UNDERWEIGHT;
 		} else if (bmi >= 18.5 && bmi <= 24.9) {
-			res = "NORMAL";
+			res = ObesityCategory.NORMAL;
 		} else if (bmi >= 25 && bmi <= 29.9) {
-			res = "OVERWEIGHT";
+			res = ObesityCategory.OVERWEIGHT;
 		} else if (bmi >= 30) {
-			res = "OBESE";
+			res = ObesityCategory.OBESE;
 		} else {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
+			throw new RuntimeException(exception);
 		}
 		return res;
 	}
 
-	public boolean abdominalObesity(double waistCircumference, char gender) {
+	public boolean abdominalObesity(double waistCircumference, Gender gender) {
 		boolean res = false;
-		if (waistCircumference <= 0 || (gender != 'M' && gender != 'F')) {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
-		} else if (gender == 'F' && waistCircumference > 80) {
+		if (waistCircumference <= 0 || (gender != Gender.MALE && gender != Gender.FEMALE)) {
+			throw new RuntimeException(exception);
+		} else if (gender == Gender.FEMALE && waistCircumference > 80) {
 			res = true;
-		} else if (gender == 'M' && waistCircumference > 90) {
+		} else if (gender == Gender.MALE && waistCircumference > 90) {
 			res = true;
 		}
 		return res;

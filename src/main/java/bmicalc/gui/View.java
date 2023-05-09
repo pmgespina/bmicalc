@@ -40,7 +40,7 @@ public class View extends JFrame {
 	private JButton btnObesity;
 	private JLabel lblObesity;
 
-
+	private String font = "Lao Sangam MN";
 
 	/**
 	 * Launch the application.
@@ -86,7 +86,7 @@ public class View extends JFrame {
 		izq_abajo.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		lblBMI = new JLabel("");
-		lblBMI.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblBMI.setFont(new Font(font, Font.PLAIN, 13));
 		izq_abajo.add(lblBMI);
 		
 		txtEnterMassAnd = new JTextField();
@@ -98,17 +98,17 @@ public class View extends JFrame {
 		txtEnterMassAnd.setColumns(10);
 		
 		lblError = new JLabel("");
-		lblError.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblError.setFont(new Font(font, Font.PLAIN, 13));
 		izq_abajo.add(lblError);
 
 		JPanel panel_mass = new JPanel();
 		izq_arriba.add(panel_mass);
 		panel_mass.setLayout(new GridLayout(1, 2, 0, 0));
 		JLabel lblmass = new JLabel("mass (kg)");
-		lblmass.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblmass.setFont(new Font(font, Font.PLAIN, 13));
 		panel_mass.add(lblmass);
 		textFieldmass = new JTextField();
-		textFieldmass.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		textFieldmass.setFont(new Font(font, Font.PLAIN, 13));
 		panel_mass.add(textFieldmass);
 		textFieldmass.setColumns(10);
 
@@ -116,15 +116,15 @@ public class View extends JFrame {
 		izq_arriba.add(panel_height);
 		panel_height.setLayout(new GridLayout(1, 2, 0, 0));
 		JLabel lblheight = new JLabel("height (m)");
-		lblheight.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblheight.setFont(new Font(font, Font.PLAIN, 13));
 		panel_height.add(lblheight);
 		textFieldheight = new JTextField();
-		textFieldheight.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		textFieldheight.setFont(new Font(font, Font.PLAIN, 13));
 		panel_height.add(textFieldheight);
 		textFieldheight.setColumns(10);
 
 		btnBMICalc = new JButton("CALCULATE BMI");
-		btnBMICalc.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		btnBMICalc.setFont(new Font(font, Font.PLAIN, 13));
 		izq_arriba.add(btnBMICalc);
 		
 		// ---------------------------------------------------------
@@ -141,15 +141,15 @@ public class View extends JFrame {
 		central_arriba.add(panel_bmi);
 		panel_bmi.setLayout(new GridLayout(1, 2, 0, 0));
 		JLabel lblbmi = new JLabel("BMI (Body Mass Index)");
-		lblbmi.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblbmi.setFont(new Font(font, Font.PLAIN, 13));
 		panel_bmi.add(lblbmi);
 		textFieldbmi = new JTextField();
-		textFieldbmi.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		textFieldbmi.setFont(new Font(font, Font.PLAIN, 13));
 		panel_bmi.add(textFieldbmi);
 		textFieldbmi.setColumns(10);
 		
 		btnCategorize = new JButton("CATEGORIZE");
-		btnCategorize.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		btnCategorize.setFont(new Font(font, Font.PLAIN, 13));
 		central_arriba.add(btnCategorize);
 		
 		JPanel central_abajo = new JPanel();
@@ -157,11 +157,11 @@ public class View extends JFrame {
 		central_abajo.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		lblCategory = new JLabel("");
-		lblCategory.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblCategory.setFont(new Font(font, Font.PLAIN, 13));
 		central_abajo.add(lblCategory);
 		
 		textFieldEnterBMI = new JTextField();
-		textFieldEnterBMI.setFont(new Font("Lao Sangam MN", Font.BOLD, 13));
+		textFieldEnterBMI.setFont(new Font(font, Font.BOLD, 13));
 		textFieldEnterBMI.setForeground(Color.RED);
 		textFieldEnterBMI.setText("BMI to categorize yourself");
 		central_abajo.add(textFieldEnterBMI);
@@ -181,7 +181,7 @@ public class View extends JFrame {
 		dch_arriba.add(panel_gender);
 		panel_gender.setLayout(new GridLayout(1, 2, 0, 0));
 		JLabel lblgender = new JLabel("gender");
-		lblgender.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblgender.setFont(new Font(font, Font.PLAIN, 13));
 		panel_gender.add(lblgender);
 		
 		JPanel panel_gender_select = new JPanel();
@@ -189,26 +189,26 @@ public class View extends JFrame {
 		panel_gender_select.setLayout(new GridLayout(2, 1, 0, 0));
 		
 		rdbtnM = new JRadioButton("M");
-		rdbtnM.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		rdbtnM.setFont(new Font(font, Font.PLAIN, 13));
 		panel_gender_select.add(rdbtnM);
 		
 		rdbtnF = new JRadioButton("F");
-		rdbtnF.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		rdbtnF.setFont(new Font(font, Font.PLAIN, 13));
 		panel_gender_select.add(rdbtnF);
 		
 		JPanel panel_waist = new JPanel();
 		dch_arriba.add(panel_waist);
 		panel_waist.setLayout(new GridLayout(1, 2, 0, 0));
 		JLabel lblwaist = new JLabel("waist circumference (cm)");
-		lblwaist.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblwaist.setFont(new Font(font, Font.PLAIN, 13));
 		panel_waist.add(lblwaist);
 		textFieldwaist = new JTextField();
-		textFieldwaist.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		textFieldwaist.setFont(new Font(font, Font.PLAIN, 13));
 		panel_waist.add(textFieldwaist);
 		textFieldwaist.setColumns(10);
 		
 		btnObesity = new JButton("OBESITY?");
-		btnObesity.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		btnObesity.setFont(new Font(font, Font.PLAIN, 13));
 		dch_arriba.add(btnObesity);
 		
 		JPanel dch_abajo = new JPanel();
@@ -216,11 +216,11 @@ public class View extends JFrame {
 		dch_abajo.setLayout(new GridLayout(3, 1, 0, 0));
 		
 		lblObesity = new JLabel("");
-		lblObesity.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		lblObesity.setFont(new Font(font, Font.PLAIN, 13));
 		dch_abajo.add(lblObesity);
 		
 		textFieldEnterGenderAnd = new JTextField();
-		textFieldEnterGenderAnd.setFont(new Font("Lao Sangam MN", Font.BOLD, 13));
+		textFieldEnterGenderAnd.setFont(new Font(font, Font.BOLD, 13));
 		textFieldEnterGenderAnd.setForeground(Color.RED);
 		textFieldEnterGenderAnd.setText("Gender & Waist circumference to know if you are obese");
 		dch_abajo.add(textFieldEnterGenderAnd);
@@ -228,7 +228,7 @@ public class View extends JFrame {
 		
 		btnClear = new JButton("CLEAR VALUES");
 		dch_abajo.add(btnClear);
-		btnClear.setFont(new Font("Lao Sangam MN", Font.PLAIN, 13));
+		btnClear.setFont(new Font(font, Font.PLAIN, 13));
 		
 		pack();
 		setVisible(true);

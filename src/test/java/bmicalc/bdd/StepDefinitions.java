@@ -3,6 +3,7 @@ package bmicalc.bdd;
 import org.junit.jupiter.api.Assertions;
 
 import bmicalc.BMICalcImpl;
+import bmicalc.Gender;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,7 +17,6 @@ public class StepDefinitions {
 	private Double result;
 	private boolean raiseException;
 	private String cat;
-	private char gender;
 	private Double waistcirc;
 	private boolean obesity;
 	
@@ -39,7 +39,7 @@ public class StepDefinitions {
 	public void the_user_with_correct_mass_kg_and_correct_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 	    mass = m;
 	    height = h;
-	    result = calculadora.bmi(mass, height);
+	    result = calculadora.calculateBodyMassIndex(mass, height);
 	}
 
 	@Then("the calculator returns a value {double}")
@@ -50,7 +50,7 @@ public class StepDefinitions {
 	@When("the user with correct mass {double} kg and incorrect height {double} m clicks on the Calculate BMI button")
 	public void the_user_with_correct_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 	    try {
-	    	result = calculadora.bmi(m, h);
+	    	result = calculadora.calculateBodyMassIndex(m, h);
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }
@@ -64,7 +64,7 @@ public class StepDefinitions {
 	@When("the user with incorrect mass {double} kg and incorrect height {double} m clicks on the Calculate BMI button")
 	public void the_user_with_incorrect_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 		try {
-	    	result = calculadora.bmi(m, h);
+	    	result = calculadora.calculateBodyMassIndex(m, h);
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }
@@ -74,7 +74,7 @@ public class StepDefinitions {
 	
 	@When("the user with a correct value {double} as BMI categorize himself")
 	public void the_user_with_a_correct_value_as_bmi_categorize_himself(Double bmi) {
-	    cat = calculadora.category(bmi);
+	    cat = calculadora.getObesityCategory(bmi).toString();
 	}
 
 	@Then("the calculator returns {string}")
@@ -85,7 +85,7 @@ public class StepDefinitions {
 	@When("the user with an incorrect value {double} as BMI categorize himself")
 	public void the_user_with_an_incorrect_value_as_bmi_categorize_himself(Double bmi) {
 	    try {
-	    	cat = calculadora.category(bmi);
+	    	cat = calculadora.getObesityCategory(bmi).toString();
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }
@@ -95,9 +95,8 @@ public class StepDefinitions {
 	
 	@When("an user introduces {string} gender and {double} cm as waist circumference")
 	public void an_user_introduces_gender_and_cm_as_waist_circumference(String g, Double w) {
-	    gender = g.charAt(0);
 	    waistcirc = w;
-	    obesity = calculadora.abdominalObesity(waistcirc, gender);
+	    obesity = calculadora.abdominalObesity(waistcirc, Gender.valueOf(g));
 	}
 
 	@Then("the calculator returns boolean {string}")
@@ -106,19 +105,10 @@ public class StepDefinitions {
 	    Assertions.assertEquals(res, obesity);
 	}
 
-	@When("an user introduces incorrect {string} gender and {double} as waist circumference")
-	public void an_user_introduces_incorrect_gender_and_as_waist_circumference(String g, Double w) {
-	    try {
-	    	obesity = calculadora.abdominalObesity(w, g.charAt(0));
-	    } catch (RuntimeException e) {
-	    	raiseException = true;
-	    }
-	}
-
 	@When("an user introduces {string} gender and incorrect {double} cm as waist circumference")
 	public void an_user_introduces_gender_and_incorrect_cm_as_waist_circumference(String g, Double w) {
 		try {
-	    	obesity = calculadora.abdominalObesity(w, g.charAt(0));
+	    	obesity = calculadora.abdominalObesity(w, Gender.valueOf(g));
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }
