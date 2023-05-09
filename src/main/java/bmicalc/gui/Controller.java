@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import bmicalc.BMICalcImpl;
+import bmicalc.Gender;
 
 public class Controller implements ActionListener {
 	
@@ -46,7 +47,8 @@ public class Controller implements ActionListener {
 				view.cleanError();
 				char gender = view.getGender();
 				double waist = view.getWaistCircumference();
-				boolean ob = calc.abdominalObesity(waist, gender);
+				Gender g = (gender == 'M')? Gender.MALE : Gender.FEMALE;
+				boolean ob = calc.abdominalObesity(waist, g);
 				view.setObesity(ob);
 			} catch (RuntimeException exception) {
 				view.setError(exception.getMessage());

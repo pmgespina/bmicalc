@@ -1,6 +1,6 @@
 package bmicalc;
 
-public class BMICalcImpl implements CardiovascularMetrics {
+public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 
 	public double calculateBodyMassIndex(double mass, double height) {
 		if (mass <= 0 || height <= 0) {
@@ -26,13 +26,13 @@ public class BMICalcImpl implements CardiovascularMetrics {
 		return res;
 	}
 
-	public boolean abdominalObesity(double waistCircumference, char gender) {
+	public boolean abdominalObesity(double waistCircumference, Gender gender) {
 		boolean res = false;
-		if (waistCircumference <= 0 || (gender != 'M' && gender != 'F')) {
+		if (waistCircumference <= 0 || (gender != Gender.MALE && gender != Gender.FEMALE)) {
 			throw new RuntimeException("EXCEPTION: Invalid arguments");
-		} else if (gender == 'F' && waistCircumference > 80) {
+		} else if (gender == Gender.FEMALE && waistCircumference > 80) {
 			res = true;
-		} else if (gender == 'M' && waistCircumference > 90) {
+		} else if (gender == Gender.MALE && waistCircumference > 90) {
 			res = true;
 		}
 		return res;
