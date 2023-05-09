@@ -74,7 +74,7 @@ public class StepDefinitions {
 	
 	@When("the user with a correct value {double} as BMI categorize himself")
 	public void the_user_with_a_correct_value_as_bmi_categorize_himself(Double bmi) {
-	    cat = calculadora.category(bmi);
+	    cat = calculadora.getObesityCategory(bmi);
 	}
 
 	@Then("the calculator returns {string}")
@@ -85,7 +85,7 @@ public class StepDefinitions {
 	@When("the user with an incorrect value {double} as BMI categorize himself")
 	public void the_user_with_an_incorrect_value_as_bmi_categorize_himself(Double bmi) {
 	    try {
-	    	cat = calculadora.category(bmi);
+	    	cat = calculadora.getObesityCategory(bmi);
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }

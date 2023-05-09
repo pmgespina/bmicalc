@@ -10,7 +10,7 @@ public class BMICalcImpl implements CardiovascularMetrics {
 		}
 	}
 
-	public String category(double bmi) {
+	public String getObesityCategory(double bmi) {
 		String res = "";
 		if (bmi < 18.5 && bmi > 0) {
 			res = "UNDERWEIGHT";
