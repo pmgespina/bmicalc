@@ -1,10 +1,12 @@
 package bmicalc;
 
 public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
+	
+	private String exception = "EXCEPTION: Invalid arguments";
 
 	public double calculateBodyMassIndex(double mass, double height) {
 		if (mass <= 0 || height <= 0) {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
+			throw new RuntimeException(exception);
 		} else {
 			return mass / Math.pow(height, 2);
 		}
@@ -21,7 +23,7 @@ public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 		} else if (bmi >= 30) {
 			res = ObesityCategory.OBESE;
 		} else {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
+			throw new RuntimeException(exception);
 		}
 		return res;
 	}
@@ -29,7 +31,7 @@ public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 	public boolean abdominalObesity(double waistCircumference, Gender gender) {
 		boolean res = false;
 		if (waistCircumference <= 0 || (gender != Gender.MALE && gender != Gender.FEMALE)) {
-			throw new RuntimeException("EXCEPTION: Invalid arguments");
+			throw new RuntimeException(exception);
 		} else if (gender == Gender.FEMALE && waistCircumference > 80) {
 			res = true;
 		} else if (gender == Gender.MALE && waistCircumference > 90) {
