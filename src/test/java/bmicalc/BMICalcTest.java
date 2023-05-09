@@ -19,43 +19,43 @@ public class BMICalcTest {
 	@Test
 	@DisplayName("Negative values for both parameters")
 	public void bmitest1() {
-		assertThrows(RuntimeException.class, () -> calc.bmi(-1, -3));
+		assertThrows(RuntimeException.class, () -> calc.calculateBodyMassIndex(-1, -3));
 	}
 
 	@Test
 	@DisplayName("Negative value for mass and height = 0")
 	public void bmitest2() {
-		assertThrows(RuntimeException.class, () -> calc.bmi(-3, 0));
+		assertThrows(RuntimeException.class, () -> calc.calculateBodyMassIndex(-3, 0));
 	}
 
 	@Test
 	@DisplayName("Negative value for mass")
 	public void bmitest3() {
-		assertThrows(RuntimeException.class, () -> calc.bmi(-1, 1.61));
+		assertThrows(RuntimeException.class, () -> calc.calculateBodyMassIndex(-1, 1.61));
 	}
 
 	@Test
 	@DisplayName("Negative value for height and mass = 0")
 	public void bmitest4() {
-		assertThrows(RuntimeException.class, () -> calc.bmi(0, -3));
+		assertThrows(RuntimeException.class, () -> calc.calculateBodyMassIndex(0, -3));
 	}
 	
 	@Test
 	@DisplayName("Negative value for height")
 	public void bmitest5() {
-		assertThrows(RuntimeException.class, () -> calc.bmi(61, -3));
+		assertThrows(RuntimeException.class, () -> calc.calculateBodyMassIndex(61, -3));
 	}
 	
 	@Test
 	@DisplayName("BMI test with accurate values")
 	public void bmitestCorrect() {
-		assertEquals(18.924941241109856, calc.bmi(62, 1.81));
+		assertEquals(18.924941241109856, calc.calculateBodyMassIndex(62, 1.81));
 	}
 	
 	@Test
 	@DisplayName("BMI test with accurate values")
 	public void bmitestCorrect2() {
-		assertEquals(20.775623268698062, calc.bmi(75, 1.90));
+		assertEquals(20.775623268698062, calc.calculateBodyMassIndex(75, 1.90));
 		
 	}
 	

@@ -39,7 +39,7 @@ public class StepDefinitions {
 	public void the_user_with_correct_mass_kg_and_correct_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 	    mass = m;
 	    height = h;
-	    result = calculadora.bmi(mass, height);
+	    result = calculadora.calculateBodyMassIndex(mass, height);
 	}
 
 	@Then("the calculator returns a value {double}")
@@ -50,7 +50,7 @@ public class StepDefinitions {
 	@When("the user with correct mass {double} kg and incorrect height {double} m clicks on the Calculate BMI button")
 	public void the_user_with_correct_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 	    try {
-	    	result = calculadora.bmi(m, h);
+	    	result = calculadora.calculateBodyMassIndex(m, h);
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }
@@ -64,7 +64,7 @@ public class StepDefinitions {
 	@When("the user with incorrect mass {double} kg and incorrect height {double} m clicks on the Calculate BMI button")
 	public void the_user_with_incorrect_mass_kg_and_incorrect_height_m_clicks_on_the_calculate_bmi_button(Double m, Double h) {
 		try {
-	    	result = calculadora.bmi(m, h);
+	    	result = calculadora.calculateBodyMassIndex(m, h);
 	    } catch (RuntimeException e) {
 	    	raiseException = true;
 	    }

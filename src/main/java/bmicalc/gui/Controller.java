@@ -26,7 +26,7 @@ public class Controller implements ActionListener {
 				view.cleanError();
 				double mass = view.getMass();
 				double height = view.getHeightBMI();
-				double res = calc.bmi(mass, height);
+				double res = calc.calculateBodyMassIndex(mass, height);
 				view.setBMI(res);
 			} catch (RuntimeException exception) {
 				view.setError(exception.getMessage());
