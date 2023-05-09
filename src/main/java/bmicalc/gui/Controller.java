@@ -37,7 +37,7 @@ public class Controller implements ActionListener {
 			try {
 				view.cleanError();
 				double bmi = view.getBMI();
-				String cat = calc.getObesityCategory(bmi);
+				String cat = calc.getObesityCategory(bmi).toString();
 				view.setCategory(cat);
 			} catch (RuntimeException exception) {
 				view.setError(exception.getMessage());

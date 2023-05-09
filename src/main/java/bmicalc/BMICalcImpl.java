@@ -10,16 +10,16 @@ public class BMICalcImpl implements CardiovascularMetrics, MetabolicMetrics {
 		}
 	}
 
-	public String getObesityCategory(double bmi) {
-		String res = "";
+	public ObesityCategory getObesityCategory(double bmi) {
+		ObesityCategory res;
 		if (bmi < 18.5 && bmi > 0) {
-			res = "UNDERWEIGHT";
+			res = ObesityCategory.UNDERWEIGHT;
 		} else if (bmi >= 18.5 && bmi <= 24.9) {
-			res = "NORMAL";
+			res = ObesityCategory.NORMAL;
 		} else if (bmi >= 25 && bmi <= 29.9) {
-			res = "OVERWEIGHT";
+			res = ObesityCategory.OVERWEIGHT;
 		} else if (bmi >= 30) {
-			res = "OBESE";
+			res = ObesityCategory.OBESE;
 		} else {
 			throw new RuntimeException("EXCEPTION: Invalid arguments");
 		}
